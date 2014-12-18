@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>amzapache - default web page</title>
+</head>
+<body>
+<br /><br /><br />
+<center>
+<h2><strong>amzapache</strong><br />
+<br />
+Default Web Page
+</h2>
+<br />
+<br />
+</center>
+</body>
+</html>
+
