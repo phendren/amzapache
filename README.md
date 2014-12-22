@@ -1,16 +1,17 @@
 amzapache Cookbook
 ===================
-This is a simplified cookbook for installing Apache HTTP server w/ mod ssl on Amazon Linux
-I have not tested it on CentOS or RHE but it should (in theory) work.
+This is a relatively straightforward Chef cookbook for installing Apache Web server w/ mod ssl on Amazon Linux
+I have not tested this cookbook on CentOS or RHE but it should (in theory) work.
 
 Requirements
 ------------
-I have only tested it with Amazon Linux and I created it for use with AWS OpsWorks for a custom layer
+
+I have only tested it with Amazon Linux and I created it for use with AWS OpsWorks for building a custom layer.
+Tested with Chef 11.4 
 
 Attributes
 ----------
-amzapache attributes - related to httpd.conf configuration template and are configured
-via the default.rb under attributes
+amzapache attributes: Are all related to the included httpd.conf configuration template and are configured as default attributes
 
 `default[:amzapache][:document_root]` - Document root - default: /var/www/html
 `default[:amzapache][:dir]` - Apache config directory - default: /etc/httpd
@@ -32,19 +33,10 @@ via the default.rb under attributes
 Usage
 -----
 #### amzapache::default
-Installs Apache using the settings as configured in the attributes. This cookbooks is setup to function
-with phppkg (installs PHP) and deployer - which can be used to easily deploy applications from github.
+Installs Apache using the settings as configured in the attributes. This cookbooks is setup to function in combo
+with php-pkg (installs PHP) and deployer (which can be used to easily deploy applications from github).
 
-Just include `amzapache` in your node`s `run_list`:
-
-```json
-{
-  "name":"my_node",
-  "run_list": [
-    "recipe[amzapache]"
-  ]
-}
-```
+To use with OpsWorks - Create a custom layer - add amzapache::default as a custom cookbook to the "setup" event.
 
 Contributing
 ------------
