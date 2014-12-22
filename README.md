@@ -7,7 +7,7 @@ Requirements
 ------------
 
 I have only tested it with Amazon Linux and I created it for use with AWS OpsWorks for building a custom layer.
-Tested with Chef 11.4 
+Tested with Chef 11.4 with AWS OpsWorks - http://aws.amazon.com/opsworks/
 
 Attributes
 ----------
