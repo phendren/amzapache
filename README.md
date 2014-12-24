@@ -1,34 +1,34 @@
 amzapache Cookbook
 ===================
 This is a relatively straightforward Chef cookbook for installing Apache Web server w/ mod ssl on Amazon Linux
-I have not tested this cookbook on CentOS or RHE but it should (in theory) work.
+I have not tested this cookbook on CentOS or RHE but it should (in theory) work the same.
 
 Requirements
 ------------
 
-I have only tested it with Amazon Linux and I created it for use with AWS OpsWorks for building a custom layer.
+I wrote it for use with AWS OpsWorks for building a custom layer using Amazon Linux.
 Tested with Chef 11.4 with AWS OpsWorks - http://aws.amazon.com/opsworks/
 
 Attributes
 ----------
 amzapache attributes: Are all related to the included httpd.conf configuration template and are configured as default attributes
 
-`default[:amzapache][:document_root]` - Document root - default: /var/www/html
-`default[:amzapache][:dir]` - Apache config directory - default: /etc/httpd
-`default[:amzapache][:log_dir]` - Apache log directory - default: /var/log/httpd
-`default[:amzapache][:user]` - User Apache will run as - default: apache
-`default[:amzapache][:group]` - Group Apache will run as - default: apache
-`default[:amzapache][:binary]` - Where binary will live - default: /usr/sbin/httpd
-`default[:amzapache][:icondir]` - Apache icon directory - default: /var/www/icons/
-`default[:amzapache][:init_script]` - Apache init script - default: /etc/init.d/httpd
-`default[:amzapache][:http_port]` - Port apache will listen on - default: 80 
-`default[:amzapache][:ssl_port]` - Port SSL will use - default: 443
-`default[:amzapache][:contact]` - you@yourdomain.com
-`default[:amzapache][:servhost]` - Domain you want for your default hostname
-`default[:amzapache][:timeout]` - Apache timeout - default: 120
-`default[:amzapache][:keepalive]` - Apache keepalive - default: off
-`default[:amzapache][:keepaliverequests]` - Apache keep alive requests - default: 100
-`default[:amzapache][:keepalivetimeout]` - Apache keepalive timeout - default: 3
+`default[:amzapache][:document_root]` - Document root - default: /var/www/html<br>
+`default[:amzapache][:dir]` - Apache config directory - default: /etc/httpd<br>
+`default[:amzapache][:log_dir]` - Apache log directory - default: /var/log/httpd<br>
+`default[:amzapache][:user]` - User Apache will run as - default: apache<br>
+`default[:amzapache][:group]` - Group Apache will run as - default: apache<br>
+`default[:amzapache][:binary]` - Where binary will live - default: /usr/sbin/httpd<br>
+`default[:amzapache][:icondir]` - Apache icon directory - default: /var/www/icons/<br>
+`default[:amzapache][:init_script]` - Apache init script - default: /etc/init.d/httpd<br>
+`default[:amzapache][:http_port]` - Port apache will listen on - default: 80<br>
+`default[:amzapache][:ssl_port]` - Port SSL will use - default: 443<br>
+`default[:amzapache][:contact]` - you@yourdomain.com<br>
+`default[:amzapache][:servhost]` - Domain you want for your default hostname<br>
+`default[:amzapache][:timeout]` - Apache timeout - default: 120<br>
+`default[:amzapache][:keepalive]` - Apache keepalive - default: off<br>
+`default[:amzapache][:keepaliverequests]` - Apache keep alive requests - default: 100<br>
+`default[:amzapache][:keepalivetimeout]` - Apache keepalive timeout - default: 3<br>
 
 Usage
 -----
