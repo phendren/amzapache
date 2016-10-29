@@ -1,0 +1,33 @@
+---
+driver:
+  name: ec2
+  aws_ssh_key_id:  <%= ENV['AWS_SSH_KEY_ID'] %>
+  security_group_ids: default
+  region: us-east-1
+  require_chef_omnibus: true
+  shared_credentials_profile: <%= ENV['AWS_PR0FILE'] %>
+  instance_type: t2.micro
+
+transport:
+  ssh_key: <%= ENV['EC2_SSH_KEY_PATH'] %>
+  connection_timeout: 10
+  connection_retries: 5
+  username: ec2-user
+
+provisioner:
+  name: chef_zero
+  root_path: /home/ec2-user/kitchen
+
+verifier:
+  root_path: /home/ec2-user/verifier
+
+platforms:
+  - name: amazon-2015.09.1
+    driver:
+      image_id: ami-60b6c60a
+
+suites:
+  - name: default
+    run_list:
+      - recipe[amzapache::default]
+    attributes:
